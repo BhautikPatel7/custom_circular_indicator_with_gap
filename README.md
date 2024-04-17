@@ -1,16 +1,7 @@
-# custom_circular_indicator
+# Multi Circular indicator With Gap
 
-A new Flutter project.
+A Custom Flutter percantage indicator Thats Shows Multiple Value in Single Circular Slider With Round Corner And With Gap Of 20,
+you can Customize This Gap Value And Indicator Value.
 
-## Getting Started
+![image](https://github.com/BhautikPatel7/custom_circular_indicator_with_gap/assets/84130806/b715eef4-2440-4ed1-be02-55d0189bfe78)
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
