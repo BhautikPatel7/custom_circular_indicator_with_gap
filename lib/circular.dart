@@ -2,16 +2,16 @@
 import 'package:custom_circular_indicator/indicator.dart';
 import 'package:flutter/material.dart';
 
-
-class CircularIndicator extends StatefulWidget {
-  const CircularIndicator({
+class CircularIndicatorWithMultiplevalue extends StatefulWidget {
+  const CircularIndicatorWithMultiplevalue({
     super.key,
+    
   });
   @override
-  State<CircularIndicator> createState() => _MyHomePageState();
+  State<CircularIndicatorWithMultiplevalue> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<CircularIndicator>
+class _MyHomePageState extends State<CircularIndicatorWithMultiplevalue>
     with SingleTickerProviderStateMixin {
   final maxprogess = 20.0;
 
@@ -28,14 +28,20 @@ class _MyHomePageState extends State<CircularIndicator>
           height: MediaQuery.of(context).size.height / 4,
           child: CustomPaint(
             painter: CircleProgress(
-              icons: [Icons.abc, Icons.abc,Icons.abc, Icons.abc, Icons.abc, Icons.abc],
+              icons: [
+                Icons.abc,
+                Icons.abc,
+                Icons.abc,
+                Icons.abc,
+                Icons.abc,
+                Icons.abc
+              ],
               strokeWidth: 25,
               progressValues: [
-             50,16.5,16.5,16.5
-              
-              
-               
-           
+                50,
+                16.5,
+                16.5,
+                16.5
               ], //Here Take value by 100 refrence Means Sum Should be 100
               gap: 21, //Progress Value and Gap Sum Should be 140
               progressColors: [
@@ -43,8 +49,6 @@ class _MyHomePageState extends State<CircularIndicator>
                 Colors.indigo.shade300,
                 Colors.indigo.shade400,
                 Colors.indigo.shade500,
-               
-                
               ],
             ),
             child: const Center(
