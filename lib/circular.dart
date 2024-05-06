@@ -49,7 +49,7 @@ class _MyHomePageState extends State<CircularIndicatorWithMultiplevalue>
                 Colors.indigo.shade300,
                 Colors.indigo.shade400,
                 Colors.indigo.shade500,
-              ],
+              ], iconColor: Colors.black, iconsize: 24,
             ),
             child: const Center(
               child: Text(

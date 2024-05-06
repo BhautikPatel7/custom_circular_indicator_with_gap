@@ -7,13 +7,17 @@ class CircleProgress extends CustomPainter {
   final List<Color> progressColors;
   final double gap;
   final List<IconData> icons;
+  final Color iconColor;
+  final double iconsize;
   double radiusvalue = 0;
   CircleProgress({
     required this.strokeWidth,
     required this.progressValues,
     required this.progressColors,
-    this.gap = 0,
+    required this.gap,
     required this.icons,
+    required this.iconColor,
+    required this.iconsize,
   });
 
   @override
@@ -35,21 +39,17 @@ class CircleProgress extends CustomPainter {
     double startAngle = -pi / 2;
     double sweepAngle = 0;
 
-    
-      if(progressValues.length == 1)
-      {
-        print("no of element");
-        print(progressValues.length);
-          radiusvalue = 105; 
-      }
-      else{
-         print("no of element");
-        print(progressValues.length);
-     radiusvalue =  ((progressValues.length - 1) * 10) + 102;
+    if (progressValues.length == 1) {
+      print("no of element");
+      print(progressValues.length);
+      radiusvalue = 105;
+    } else {
+      print("no of element");
+      print(progressValues.length);
+      radiusvalue = ((progressValues.length - 1) * 10) + 102;
 
-     print(radiusvalue);
-      }
-    
+      print(radiusvalue);
+    }
 
     for (int i = 0; i < progressValues.length; i++) {
       sweepAngle = 2 * pi * (progressValues[i] / radiusvalue);
@@ -78,11 +78,11 @@ class CircleProgress extends CustomPainter {
           text: String.fromCharCode(icons[i].codePoint),
           style: TextStyle(
             fontFamily: icons[i].fontFamily,
-            fontSize: 24.0, // Adjust the size of the icon as needed
-            color: Colors.black, // Adjust the color of the icon as needed
+            fontSize: iconsize, // Adjust the size of the icon as needed
+            color: iconColor, // Adjust the color of the icon as needed
           ),
         ),
-        textDirection: TextDirection.ltr,
+        textDirection: TextDirection.rtl,
       )
         ..layout()
         ..paint(canvas, Offset(iconX, iconY));
@@ -90,6 +90,7 @@ class CircleProgress extends CustomPainter {
       startAngle += sweepAngle + gap * pi / 180; // Add gap angle
     }
   }
+
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) {
     return true;
