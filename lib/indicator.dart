@@ -7,6 +7,7 @@ class CircleProgress extends CustomPainter {
   final List<Color> progressColors;
   final double gap;
   final List<IconData> icons;
+  double radiusvalue = 0;
   CircleProgress({
     required this.strokeWidth,
     required this.progressValues,
@@ -34,8 +35,24 @@ class CircleProgress extends CustomPainter {
     double startAngle = -pi / 2;
     double sweepAngle = 0;
 
+    
+      if(progressValues.length == 1)
+      {
+        print("no of element");
+        print(progressValues.length);
+          radiusvalue = 105; 
+      }
+      else{
+         print("no of element");
+        print(progressValues.length);
+     radiusvalue =  ((progressValues.length - 1) * 10) + 102;
+
+     print(radiusvalue);
+      }
+    
+
     for (int i = 0; i < progressValues.length; i++) {
-      sweepAngle = 2 * pi * (progressValues[i] / 140);
+      sweepAngle = 2 * pi * (progressValues[i] / radiusvalue);
       arcPaint.color = progressColors[i];
 
       // Draw the arc

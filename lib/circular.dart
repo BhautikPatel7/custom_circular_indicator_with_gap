@@ -1,5 +1,7 @@
+// import 'package:custom_circular_indicator/indicator.dart';
 import 'package:custom_circular_indicator/indicator.dart';
 import 'package:flutter/material.dart';
+
 
 class CircularIndicator extends StatefulWidget {
   const CircularIndicator({
@@ -18,7 +20,7 @@ class _MyHomePageState extends State<CircularIndicator>
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text('demo'),
+        title: const Text('demo'),
       ),
       body: Center(
         child: Container(
@@ -26,25 +28,26 @@ class _MyHomePageState extends State<CircularIndicator>
           height: MediaQuery.of(context).size.height / 4,
           child: CustomPaint(
             painter: CircleProgress(
-              icons: [Icons.abc, Icons.abc, Icons.abc, Icons.abc, Icons.abc],
+              icons: [Icons.abc, Icons.abc,Icons.abc, Icons.abc, Icons.abc, Icons.abc],
               strokeWidth: 25,
               progressValues: [
-                20,
-                20,
-                20,
-                20,
-                20
+             50,16.5,16.5,16.5
+              
+              
+               
+           
               ], //Here Take value by 100 refrence Means Sum Should be 100
-              gap: 20, //Progress Value and Gap Sum Should be 140
+              gap: 21, //Progress Value and Gap Sum Should be 140
               progressColors: [
-                Colors.green.shade100,
-                Colors.green.shade200,
-                Colors.green.shade300,
-                Colors.green.shade400,
-                Colors.green.shade500
+                Colors.indigo.shade200,
+                Colors.indigo.shade300,
+                Colors.indigo.shade400,
+                Colors.indigo.shade500,
+               
+                
               ],
             ),
-            child: Center(
+            child: const Center(
               child: Text(
                 'Content',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
